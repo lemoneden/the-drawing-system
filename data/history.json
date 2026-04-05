@@ -1,0 +1,86 @@
+[
+  {
+    "timestamp": "2026-04-05T15:30:45.123Z",
+    "date": "05.04.2026",
+    "time": "18:30:45",
+    "participantsCount": 3,
+    "participantsList": [
+      {
+        "id": "345345",
+        "name": "Orina",
+        "contact": "orina@gmail.ru"
+      },
+      {
+        "id": "67867",
+        "name": "Kitik",
+        "contact": "kitik@gmail.ru"
+      },
+      {
+        "id": "93434",
+        "name": "Delfin",
+        "contact": "delfin@gmail.ru"
+      }
+    ],
+    "winner": {
+      "id": "67867",
+      "name": "Kitik",
+      "contact": "kitik@gmail.ru"
+    }
+  },
+  {
+    "timestamp": "2026-04-05T17:30:20.808Z",
+    "date": "05.04.2026",
+    "time": "20:30:20",
+    "participantsCount": 3,
+    "participantsList": [
+      {
+        "id": "345345",
+        "name": "Orina",
+        "contact": "orina@gmail.ru"
+      },
+      {
+        "id": "67867",
+        "name": "Kitik",
+        "contact": "kitik@gmail.ru"
+      },
+      {
+        "id": "93434",
+        "name": "Delfin",
+        "contact": "delfin@gmail.ru"
+      }
+    ],
+    "winner": {
+      "id": "93434",
+      "name": "Delfin",
+      "contact": "delfin@gmail.ru"
+    }
+  },
+  {
+    "timestamp": "2026-04-05T17:39:03.995Z",
+    "date": "05.04.2026",
+    "time": "20:39:04",
+    "participantsCount": 3,
+    "participantsList": [
+      {
+        "id": "345345",
+        "name": "Orina",
+        "contact": "orina@gmail.ru"
+      },
+      {
+        "id": "67867",
+        "name": "Kitik",
+        "contact": "kitik@gmail.ru"
+      },
+      {
+        "id": "93434",
+        "name": "Delfin",
+        "contact": "delfin@gmail.ru"
+      }
+    ],
+    "winner": {
+      "id": "345345",
+      "name": "Orina",
+      "contact": "orina@gmail.ru"
+    }
+  }
+]

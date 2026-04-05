@@ -1,0 +1,21 @@
+{
+  "name": "coursach",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lemoneden/the-drawing-system.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lemoneden/the-drawing-system/issues"
+  },
+  "homepage": "https://github.com/lemoneden/the-drawing-system#readme",
+  "type": "module"
+}
