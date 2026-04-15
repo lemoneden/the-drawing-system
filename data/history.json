@@ -36,5 +36,81 @@
       "name": "Kitik",
       "contact": "kitik@gmail.ru"
     }
+  },
+  {
+    "timestamp": "2026-04-15T16:43:05.970Z",
+    "date": "15.04.2026",
+    "time": "19:43:05",
+    "participantsCount": 5,
+    "participantsList": [
+      {
+        "id": "345345",
+        "name": "Orina",
+        "contact": "orina@gmail.ru"
+      },
+      {
+        "id": "67867",
+        "name": "Kitik",
+        "contact": "kitik@gmail.ru"
+      },
+      {
+        "id": "93434",
+        "name": "Delfin",
+        "contact": "delfin@gmail.ru"
+      },
+      {
+        "id": "465657",
+        "name": "madam sel'derei",
+        "contact": "selderei@gmail.ru"
+      },
+      {
+        "id": "68345",
+        "name": "Litcha",
+        "contact": "Litcha@gmail.ru"
+      }
+    ],
+    "winner": {
+      "id": "93434",
+      "name": "Delfin",
+      "contact": "delfin@gmail.ru"
+    }
+  },
+  {
+    "timestamp": "2026-04-15T19:48:16.031Z",
+    "date": "15.04.2026",
+    "time": "22:48:16",
+    "participantsCount": 5,
+    "participantsList": [
+      {
+        "id": "345345",
+        "name": "Orina",
+        "contact": "orina@gmail.ru"
+      },
+      {
+        "id": "67867",
+        "name": "Kitik",
+        "contact": "kitik@gmail.ru"
+      },
+      {
+        "id": "93434",
+        "name": "Delfin",
+        "contact": "delfin@gmail.ru"
+      },
+      {
+        "id": "465657",
+        "name": "madam sel'derei",
+        "contact": "selderei@gmail.ru"
+      },
+      {
+        "id": "68345",
+        "name": "Litcha",
+        "contact": "Litcha@gmail.ru"
+      }
+    ],
+    "winner": {
+      "id": "68345",
+      "name": "Litcha",
+      "contact": "Litcha@gmail.ru"
+    }
   }
 ]
