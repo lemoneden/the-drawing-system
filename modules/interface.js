@@ -1,50 +1,46 @@
 import readline from "readline";
 import fs from "fs";
 
-import getRandomWinner from "./lottery.js";
-import { addRecord, showHistory } from "./history.js";
-
+// Цвета
 const yellow = "\x1b[33m";
 const red = "\x1b[31m";
 const green = "\x1b[32m";
 const reset = "\x1b[0m";
 
-const pathToParticipants = "./data/participants.json";
-const participants = JSON.parse(fs.readFileSync(pathToParticipants, "utf-8"));
+// Загрузка участников с обработкой ошибок
+let participants = [];
+try {
+  const pathToParticipants = "./data/participants.json";
+  if (!fs.existsSync(pathToParticipants)) {
+    throw new Error(`Файл не найден: ${pathToParticipants}`);
+  }
+  const rawData = fs.readFileSync(pathToParticipants, "utf-8");
+  const parsed = JSON.parse(rawData);
+  if (!Array.isArray(parsed) || parsed.length === 0) {
+    throw new Error(
+      "Список участников пуст или имеет неверный формат (ожидается массив)",
+    );
+  }
+  participants = parsed;
+  console.log(`${green}Загружено ${participants.length} участников${reset}`);
+} catch (err) {
+  console.error(`${red}Ошибка загрузки участников:${reset} ${err.message}`);
+  console.error(`${red}Программа завершена.${reset}`);
+  process.exit(1);
+}
 
-// const spin = (participantsArray, callback) => {
-//   let index = 0;
-//   let speed = 100;
-//   // Сохраняем победителя ДО анимации
-//   const finalWinner = getRandomWinner(participantsArray);
+// Импорты модулей
+import getRandomWinner from "./lottery.js";
+import { addRecord, showHistory } from "./history.js";
 
-//   const draw = () => {
-//     const view = participantsArray
-//       .map((item, i) =>
-//         i === index % participantsArray.length ? `[ ${item.name} ]` : item.name,
-//       )
-//       .join("  ");
-//     process.stdout.write("\r" + view);
-//   };
-
-//   const animate = () => {
-//     draw();
-//     index++;
-//     const maxSpeed = 450;
-
-//     if (speed < maxSpeed) speed += 15;
-
-//     if (speed >= maxSpeed) {
-//       // Используем заранее выбранного победителя
-//       console.log(`\nПОБЕДИТЕЛЬ: ${finalWinner.name}`);
-//       callback(finalWinner);
-//       return;
-//     }
-
-//     setTimeout(animate, speed);
-//   };
-
+// Функция розыгрыша
 const spin = (participantsArray, callback) => {
+  if (!participantsArray || participantsArray.length === 0) {
+    console.error(`${red}Невозможно провести розыгрыш: нет участников${reset}`);
+    callback(null);
+    return;
+  }
+
   let index = 0;
   let speed = 100;
   const finalWinner = getRandomWinner(participantsArray);
@@ -80,13 +76,12 @@ const spin = (participantsArray, callback) => {
       roundsAfterMaxSpeed++;
     }
 
-    // Останавливаемся, когда сделали хотя бы 1 полный круг на максимальной скорости И дошли до победителя
     if (
       maxSpeedReached &&
       roundsAfterMaxSpeed >= participantsArray.length &&
       index % participantsArray.length === winnerIndex
     ) {
-      draw(); // <-- добавить: финальная отрисовка с подсветкой победителя
+      draw();
       console.log(`\nПОБЕДИТЕЛЬ: ${green}${finalWinner.name}${reset}`);
       callback(finalWinner);
       return;
@@ -98,16 +93,11 @@ const spin = (participantsArray, callback) => {
   animate();
 };
 
-// animate();
-
-// создание интерфейса для ввода данных
-
+// Интерфейс
 const rl = readline.createInterface({
-  input: process.stdin, // stdin стандартный ввод
-  output: process.stdout, // stdout стадартный вывод
+  input: process.stdin,
+  output: process.stdout,
 });
-
-// обработка ввода
 
 const showMenu = () => {
   console.log(`\n${yellow}=== СИСТЕМА РОЗЫГРЫША ===${reset}`);
@@ -120,14 +110,27 @@ const showMenu = () => {
       case "1":
         console.log("Запуск розыгрыша...");
         spin(participants, (winner) => {
-          console.log("Розыгрыш закончен, победитель:", winner);
-          addRecord(participants, winner);
+          if (winner) {
+            try {
+              addRecord(participants, winner);
+            } catch (err) {
+              console.error(
+                `${red}Ошибка сохранения истории:${reset} ${err.message}`,
+              );
+            }
+          }
           showMenu();
         });
         break;
       case "2":
         console.log("Показ истории...");
-        showHistory();
+        try {
+          showHistory();
+        } catch (err) {
+          console.error(
+            `${red}Ошибка загрузки истории:${reset} ${err.message}`,
+          );
+        }
         showMenu();
         break;
       case "3":
