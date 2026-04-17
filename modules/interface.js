@@ -82,7 +82,9 @@ const spin = (participantsArray, callback) => {
       index % participantsArray.length === winnerIndex
     ) {
       draw();
-      console.log(`\nПОБЕДИТЕЛЬ: ${green}${finalWinner.name}${reset}`);
+      console.log(
+        `\nПОБЕДИТЕЛЬ: ${green}${finalWinner.name}${reset}, ID: ${green}${finalWinner.id}${reset}`,
+      );
       callback(finalWinner);
       return;
     }
