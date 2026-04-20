@@ -1,71 +1,8 @@
 [
   {
-    "timestamp": "2026-04-17T23:10:00.849Z",
+    "timestamp": "2026-04-18T12:50:26.237Z",
     "date": "18.04.2026",
-    "time": "02:10:00",
-    "participantsCount": 10,
-    "participantsList": [
-      {
-        "id": "1",
-        "name": "Orina",
-        "contact": "orina@gmail.ru"
-      },
-      {
-        "id": "2",
-        "name": "Kitik",
-        "contact": "kitik@gmail.ru"
-      },
-      {
-        "id": "3",
-        "name": "Delfin",
-        "contact": "delfin@gmail.ru"
-      },
-      {
-        "id": "4",
-        "name": "madam sel'derei",
-        "contact": "selderei@gmail.ru"
-      },
-      {
-        "id": "5",
-        "name": "Litcha",
-        "contact": "Litcha@gmail.ru"
-      },
-      {
-        "id": "6",
-        "name": "Alex",
-        "contact": "alex@mail.ru"
-      },
-      {
-        "id": "7",
-        "name": "Maria",
-        "contact": "maria@mail.ru"
-      },
-      {
-        "id": "8",
-        "name": "John",
-        "contact": "john@mail.ru"
-      },
-      {
-        "id": "9",
-        "name": "Elena",
-        "contact": "elena@mail.ru"
-      },
-      {
-        "id": "10",
-        "name": "Peter",
-        "contact": "peter@mail.ru"
-      }
-    ],
-    "winner": {
-      "id": "8",
-      "name": "John",
-      "contact": "john@mail.ru"
-    }
-  },
-  {
-    "timestamp": "2026-04-17T23:10:20.900Z",
-    "date": "18.04.2026",
-    "time": "02:10:20",
+    "time": "15:50:26",
     "participantsCount": 10,
     "participantsList": [
       {
